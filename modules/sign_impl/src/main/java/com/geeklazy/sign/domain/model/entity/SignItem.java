@@ -2,7 +2,10 @@ package com.geeklazy.sign.domain.model.entity;
 
 import com.geeklazy.sign.domain.model.signitem.SignItemTypeEnum;
 
+import java.lang.reflect.Array;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 打卡项
@@ -17,6 +20,7 @@ public class SignItem {
 
 	private Date effectiveDateTime;// 生效日期
 	private Date expireDateTime;// 失效日期
+	private int[] effectiveDaysOfWeek;
 
 	// 地点信息
 	private double positionLatitude;// 经度

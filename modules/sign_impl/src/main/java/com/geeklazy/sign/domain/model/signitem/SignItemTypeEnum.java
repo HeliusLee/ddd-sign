@@ -11,13 +11,19 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum SignItemTypeEnum {
-	OTHER(0, "其他打卡"),
-	TIMES(1, "计次卡"),
-	DURATION(2, "计时卡"),
-	COUNT(3,"计数卡"),
-	;
-	private int code;
+	NORMAL(0, "计次卡"),
+	DURATION(1, "计时卡"),
+	COUNT(2, "计数卡"),
+	ATTENDANCE(3, "考勤卡"),;
+	private int value;
 	private String desc;
 
+	public static SignItemTypeEnum getEnumByValue(int value) {
+		for (SignItemTypeEnum instance : SignItemTypeEnum.values())
+			if (instance.value == value)
+				return instance;
+
+		return null;
+	}
 
 }
